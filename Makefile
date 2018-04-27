@@ -7,7 +7,7 @@ LIBS = -lboost_unit_test_framework
 
 SOURCEDIR = .
 BUILDDIR = build
-EXECUTABLE = test
+EXECUTABLE = luacompiler
 
 SOURCES = $(wildcard $(SOURCEDIR)/*.cpp)
 OBJECTS = $(patsubst $(SOURCEDIR)/%.cpp,$(BUILDDIR)/%.o,$(SOURCES))
@@ -17,7 +17,7 @@ OBJECTS = $(patsubst $(SOURCEDIR)/%.cpp,$(BUILDDIR)/%.o,$(SOURCES))
 all: $(BUILDDIR)/$(EXECUTABLE)
 
 test: 
-	make -f test/Makefile
+	make test -C test
 
 clean:
 	rm -rf $(BUILDDIR)
